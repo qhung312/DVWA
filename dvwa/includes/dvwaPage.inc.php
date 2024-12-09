@@ -48,16 +48,15 @@ function dvwa_start_session() {
 
 	$security_level = dvwaSecurityLevelGet();
 	if ($security_level == 'impossible') {
-		$httponly = true;
 		$samesite = "Strict";
 	}
 	else {
-		$httponly = false;
 		$samesite = "";
 	}
 
+    $httponly = true;
+	$secure = true;
 	$maxlifetime = 86400;
-	$secure = false;
 	$domain = parse_url($_SERVER['HTTP_HOST'], PHP_URL_HOST);
 
 	/*
