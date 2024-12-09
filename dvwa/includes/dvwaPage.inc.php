@@ -56,7 +56,7 @@ function dvwa_start_session() {
 		$samesite = "";
 	}
 
-	$maxlifetime = 86400;
+	$maxlifetime = 60;
 	$secure = false;
 	$domain = parse_url($_SERVER['HTTP_HOST'], PHP_URL_HOST);
 
